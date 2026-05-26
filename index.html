@@ -1,569 +1,185 @@
+
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flowchart Admin PT Bukit Batu Internusa</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Judul Website -->
-  <meta property="og:title" content="Flowchart Admin PT Bukit Batu Internusa" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Lowongan Kerja - PT BUKIT BATU INTERNUSA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e2e8f0;
+        }
+        
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
 
-  <!-- Deskripsi Singkat -->
-  <meta property="og:description" content="Alur Kerja Admin PT Bukit Batu Internusa" />
+        /* Pola Latar Belakang SVG Aman untuk Render Gambar */
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1.5' fill='%23fbbf24' opacity='0.5'/%3E%3C/svg%3E");
+        }
 
-  <!-- URL Website -->
-  <meta property="og:url" content="https://cr4r.github.io/Flowchart-Worker-BBI/" />
-
-  <!-- Link Gambar/Logo Preview -->
-  <meta property="og:image" content="https://github.com/cr4r/Flowchart-Worker-BBI/blob/main/Images/Logo.png?raw=true" />
-
-  <!-- Tipe Konten -->
-  <meta property="og:type" content="Website" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
-      background-attachment: fixed;
-    }
-
-    h1,
-    h2,
-    h3,
-    .font-outfit {
-      font-family: 'Outfit', sans-serif;
-    }
-
-    .glass-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .glass-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px 0 rgba(31, 38, 135, 0.12);
-      background: rgba(255, 255, 255, 0.9);
-    }
-
-    .clickable-card {
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .clickable-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
-      transform: skewX(-25deg);
-      transition: all 0.7s ease;
-    }
-
-    .clickable-card:hover::after {
-      left: 150%;
-    }
-
-    .arrow-down {
-      animation: float 2.5s ease-in-out infinite;
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(-5px);
-      }
-
-      50% {
-        transform: translateY(5px);
-      }
-    }
-
-    /* Modal Transitions */
-    .modal-enter {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-
-    .modal-enter-active {
-      opacity: 1;
-      transform: scale(1);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .modal-exit {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .modal-exit-active {
-      opacity: 0;
-      transform: scale(0.95);
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    @media print {
-      body {
-        background: white;
-      }
-
-      .glass-card {
-        box-shadow: none;
-        border: 1px solid #e2e8f0;
-      }
-
-      .no-print {
-        display: none !important;
-      }
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .step-number {
-      background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05), inset 1px 1px 0 rgba(255, 255, 255, 1);
-    }
-  </style>
+        /* Menyembunyikan elemen kontrol saat poster di-download */
+        [data-html2canvas-ignore] {
+            display: none !important;
+        }
+    </style>
 </head>
+<body class="flex flex-col justify-center items-center min-h-screen py-10 px-4">
 
-<body class="antialiased text-gray-800 min-h-screen py-10 px-4 sm:px-6 lg:px-8 relative overflow-x-hidden">
-
-  <!-- Decorative Background Elements -->
-  <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-300/20 blur-3xl"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-300/20 blur-3xl"></div>
-  </div>
-
-  <div class="max-w-4xl mx-auto relative">
-    <!-- Top Action Bar -->
-    <div class="flex justify-end mb-6 no-print">
-      <button onclick="window.print()"
-        class="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur border border-gray-200 rounded-full text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors shadow-sm">
-        <i data-lucide="printer" class="w-4 h-4"></i> Cetak Flowchart
-      </button>
-    </div>
-
-    <!-- Header -->
-    <div class="text-center mb-16 relative">
-      <div class="inline-block p-3 bg-white/50 backdrop-blur-md rounded-2xl mb-4 shadow-sm border border-white">
-        <img src="https://github.com/cr4r/Flowchart-Worker-BBI/blob/main/Images/Logo.png?raw=true" alt="BBI Logo"
-          class="w-16 h-16 rounded-xl mx-auto shadow-md">
-      </div>
-      <h1 class="text-4xl md:text-5xl font-extrabold gradient-text mb-4 tracking-tight">
-        PT Bukit Batu Internusa
-      </h1>
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-700 mb-4 font-outfit">
-        Flowchart Proses Admin
-      </h2>
-      <p class="text-gray-500 text-lg max-w-2xl mx-auto font-medium">
-        Alur kerja standar operasional dari rekapitulasi data hingga pengiriman dokumen secara profesional dan
-        terstruktur.
-      </p>
-    </div>
-
-    <!-- Flowchart Container -->
-    <div class="space-y-4 md:space-y-6 relative">
-
-      <!-- Connecting Line Background (Desktop only) -->
-      <div
-        class="hidden md:block absolute left-12 top-10 bottom-10 w-1 bg-gradient-to-b from-blue-200 via-purple-200 to-indigo-200 rounded-full z-0">
-      </div>
-
-      <!-- Step 1 -->
-      <div
-        class="glass-card rounded-2xl p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-5 relative z-10 border-l-8 border-l-blue-500">
-        <div
-          class="step-number w-14 h-14 rounded-2xl text-blue-600 flex items-center justify-center shrink-0 font-bold text-xl font-outfit">
-          01
-        </div>
-        <div class="bg-blue-50/50 p-3 rounded-xl text-blue-600 shrink-0 hidden sm:block">
-          <i data-lucide="clipboard-list" class="w-7 h-7"></i>
-        </div>
-        <div class="flex-1">
-          <h3 class="text-xl font-bold text-gray-800 mb-2 font-outfit">Rekap Data</h3>
-          <p class="text-gray-600">Merekap data Absen, Lembur, dan penggunaan Speedboat.</p>
-        </div>
-      </div>
-
-      <!-- Arrow -->
-      <div class="flex justify-center md:justify-start md:pl-[3.25rem] -my-1 relative z-10 arrow-down h-8">
-        <div class="bg-white/80 backdrop-blur rounded-full p-1 shadow-sm text-gray-400 border border-gray-100">
-          <i data-lucide="chevron-down" class="w-5 h-5"></i>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div
-        class="glass-card rounded-2xl p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-5 relative z-10 border-l-8 border-l-amber-500">
-        <div
-          class="step-number w-14 h-14 rounded-2xl text-amber-600 flex items-center justify-center shrink-0 font-bold text-xl font-outfit">
-          02
-        </div>
-        <div class="bg-amber-50/50 p-3 rounded-xl text-amber-600 shrink-0 hidden sm:block">
-          <i data-lucide="check-circle-2" class="w-7 h-7"></i>
-        </div>
-        <div class="flex-1">
-          <h3 class="text-xl font-bold text-gray-800 mb-2 font-outfit">Verifikasi Data</h3>
-          <p class="text-gray-600">Memeriksa dan memvalidasi kebenaran data rekapitulasi.</p>
-        </div>
-      </div>
-
-      <!-- Arrow -->
-      <div class="flex justify-center md:justify-start md:pl-[3.25rem] -my-1 relative z-10 arrow-down h-8">
-        <div class="bg-white/80 backdrop-blur rounded-full p-1 shadow-sm text-gray-400 border border-gray-100">
-          <i data-lucide="chevron-down" class="w-5 h-5"></i>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div
-        class="glass-card rounded-2xl p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-5 relative z-10 border-l-8 border-l-emerald-500">
-        <div
-          class="step-number w-14 h-14 rounded-2xl text-emerald-600 flex items-center justify-center shrink-0 font-bold text-xl font-outfit">
-          03
-        </div>
-        <div class="bg-emerald-50/50 p-3 rounded-xl text-emerald-600 shrink-0 hidden sm:block">
-          <i data-lucide="wallet" class="w-7 h-7"></i>
-        </div>
-        <div class="flex-1">
-          <h3 class="text-xl font-bold text-gray-800 mb-2 font-outfit">Buat Payroll Gaji</h3>
-          <p class="text-gray-600">Memproses perhitungan gaji berdasarkan data yang telah diverifikasi.</p>
-        </div>
-      </div>
-
-      <!-- Arrow -->
-      <div class="flex justify-center md:justify-start md:pl-[3.25rem] -my-1 relative z-10 arrow-down h-8">
-        <div class="bg-white/80 backdrop-blur rounded-full p-1 shadow-sm text-gray-400 border border-gray-100">
-          <i data-lucide="chevron-down" class="w-5 h-5"></i>
-        </div>
-      </div>
-
-      <!-- Step 4 -->
-      <div onclick="openDocumentModal('Buat Invoice')"
-        class="glass-card clickable-card rounded-2xl p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-5 relative z-10 border-l-8 border-l-purple-500 group ring-2 ring-transparent hover:ring-purple-200">
-        <div
-          class="absolute top-4 right-4 bg-purple-100 text-purple-600 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
-          <i data-lucide="mouse-pointer-click" class="w-3 h-3"></i> Klik Detail
-        </div>
-        <div
-          class="step-number w-14 h-14 rounded-2xl text-purple-600 flex items-center justify-center shrink-0 font-bold text-xl font-outfit">
-          04
-        </div>
-        <div
-          class="bg-purple-50/50 p-3 rounded-xl text-purple-600 shrink-0 hidden sm:block group-hover:scale-110 transition-transform">
-          <i data-lucide="file-text" class="w-7 h-7"></i>
-        </div>
-        <div class="flex-1 pr-20">
-          <h3 class="text-xl font-bold text-gray-800 mb-2 font-outfit group-hover:text-purple-700 transition-colors">
-            Buat Invoice</h3>
-          <p class="text-gray-600">Menerbitkan tagihan (Invoice) sesuai dengan nilai pekerjaan/payroll.</p>
-        </div>
-      </div>
-
-      <!-- Arrow -->
-      <div class="flex justify-center md:justify-start md:pl-[3.25rem] -my-1 relative z-10 arrow-down h-8">
-        <div class="bg-white/80 backdrop-blur rounded-full p-1 shadow-sm text-gray-400 border border-gray-100">
-          <i data-lucide="chevron-down" class="w-5 h-5"></i>
-        </div>
-      </div>
-
-      <!-- Step 5 -->
-      <div
-        class="glass-card rounded-2xl p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-5 relative z-10 border-l-8 border-l-rose-500">
-        <div
-          class="step-number w-14 h-14 rounded-2xl text-rose-600 flex items-center justify-center shrink-0 font-bold text-xl font-outfit">
-          05
-        </div>
-        <div class="bg-rose-50/50 p-3 rounded-xl text-rose-600 shrink-0 hidden sm:block">
-          <i data-lucide="receipt" class="w-7 h-7"></i>
-        </div>
-        <div class="flex-1">
-          <h3 class="text-xl font-bold text-gray-800 mb-2 font-outfit">Buat Faktur Pajak</h3>
-          <p class="text-gray-600">Menerbitkan dokumen Faktur Pajak yang melengkapi Invoice.</p>
-        </div>
-      </div>
-
-      <!-- Arrow -->
-      <div class="flex justify-center md:justify-start md:pl-[3.25rem] -my-1 relative z-10 arrow-down h-8">
-        <div class="bg-white/80 backdrop-blur rounded-full p-1 shadow-sm text-gray-400 border border-gray-100">
-          <i data-lucide="chevron-down" class="w-5 h-5"></i>
-        </div>
-      </div>
-
-      <!-- Step 6 -->
-      <div onclick="openDocumentModal('Cetak & Susun Berkas')"
-        class="glass-card clickable-card rounded-2xl p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-5 relative z-10 border-l-8 border-l-cyan-500 group ring-2 ring-transparent hover:ring-cyan-200">
-        <div
-          class="absolute top-4 right-4 bg-cyan-100 text-cyan-700 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
-          <i data-lucide="mouse-pointer-click" class="w-3 h-3"></i> Klik Detail
-        </div>
-        <div
-          class="step-number w-14 h-14 rounded-2xl text-cyan-600 flex items-center justify-center shrink-0 font-bold text-xl font-outfit">
-          06
-        </div>
-        <div
-          class="bg-cyan-50/50 p-3 rounded-xl text-cyan-600 shrink-0 hidden sm:block group-hover:scale-110 transition-transform">
-          <i data-lucide="printer" class="w-7 h-7"></i>
-        </div>
-        <div class="flex-1 pr-20">
-          <h3 class="text-xl font-bold text-gray-800 mb-2 font-outfit group-hover:text-cyan-700 transition-colors">
-            Cetak & Susun Berkas</h3>
-          <p class="text-gray-600">Print PO, dokumen BPJS, Kontrak. Kemudian susun secara rapi per invoice.
-          </p>
-        </div>
-      </div>
-
-      <!-- Arrow -->
-      <div class="flex justify-center md:justify-start md:pl-[3.25rem] -my-1 relative z-10 arrow-down h-8">
-        <div class="bg-white/80 backdrop-blur rounded-full p-1 shadow-sm text-gray-400 border border-gray-100">
-          <i data-lucide="chevron-down" class="w-5 h-5"></i>
-        </div>
-      </div>
-
-      <!-- Step 7 -->
-      <div
-        class="glass-card rounded-2xl p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-5 relative z-10 border-l-8 border-l-orange-500">
-        <div
-          class="step-number w-14 h-14 rounded-2xl text-orange-600 flex items-center justify-center shrink-0 font-bold text-xl font-outfit">
-          07
-        </div>
-        <div class="bg-orange-50/50 p-3 rounded-xl text-orange-600 shrink-0 hidden sm:block">
-          <i data-lucide="shield-check" class="w-7 h-7"></i>
-        </div>
-        <div class="flex-1">
-          <h3 class="text-xl font-bold text-gray-800 mb-2 font-outfit">Verifikasi Berkas</h3>
-          <p class="text-gray-600">Pengecekan kelengkapan akhir pada seluruh dokumen fisik yang telah disusun.
-          </p>
-        </div>
-      </div>
-
-      <!-- Arrow -->
-      <div class="flex justify-center md:justify-start md:pl-[3.25rem] -my-1 relative z-10 arrow-down h-8">
-        <div class="bg-white/80 backdrop-blur rounded-full p-1 shadow-sm text-gray-400 border border-gray-100">
-          <i data-lucide="chevron-down" class="w-5 h-5"></i>
-        </div>
-      </div>
-
-      <!-- Step 8 -->
-      <div
-        class="glass-card rounded-2xl p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-5 relative z-10 border-l-8 border-l-indigo-600">
-        <div
-          class="step-number w-14 h-14 rounded-2xl text-indigo-600 flex items-center justify-center shrink-0 font-bold text-xl font-outfit">
-          08
-        </div>
-        <div class="bg-indigo-50/50 p-3 rounded-xl text-indigo-600 shrink-0 hidden sm:block">
-          <i data-lucide="send" class="w-7 h-7"></i>
-        </div>
-        <div class="flex-1">
-          <h3 class="text-xl font-bold text-gray-800 mb-2 font-outfit">Kirim Dokumen</h3>
-          <p class="text-gray-600">Pengiriman dokumen fisik/invoice ke pihak klien atau departemen terkait.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Footer -->
-    <div class="mt-16 mb-8 text-center text-sm text-gray-500 font-medium">
-      <p>&copy; <span id="year"></span> PT Bukit Batu Internusa. All rights reserved.</p>
-      <p class="mt-1 flex items-center justify-center gap-1 text-gray-400">
-        <i data-lucide="shield" class="w-4 h-4"></i> Internal Use Only
-      </p>
-    </div>
-  </div>
-
-  <!-- Modal Background -->
-  <div id="modalOverlay"
-    class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
-
-    <!-- Modal Content -->
-    <div id="modalContent"
-      class="bg-white rounded-3xl shadow-2xl w-full max-w-lg transform scale-95 opacity-0 transition-all duration-300 overflow-hidden flex flex-col max-h-[90vh]">
-
-      <!-- Modal Header -->
-      <div class="px-6 py-5 border-b border-gray-100 bg-slate-50/50 flex justify-between items-center relative">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
-        <div>
-          <h3 id="modalTitle" class="text-2xl font-bold text-gray-800 font-outfit">Detail Dokumen</h3>
-          <p class="text-sm text-gray-500 mt-1">Urutan susunan berkas wajib:</p>
-        </div>
-        <button onclick="closeModal()"
-          class="text-gray-400 hover:text-red-500 hover:bg-red-50 p-2 rounded-full transition-colors focus:outline-none">
-          <i data-lucide="x" class="w-6 h-6"></i>
+    <div class="mb-6 flex flex-col items-center gap-2" data-html2canvas-ignore="true">
+        <p class="text-gray-600 text-sm font-medium text-center">Klik tombol di bawah untuk menyimpan poster:</p>
+        <button onclick="downloadPoster()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg flex items-center transition-transform transform hover:scale-105">
+            <i class="fa-solid fa-download mr-2"></i> Download sebagai PNG
         </button>
-      </div>
-
-      <!-- Modal Body (Document List) -->
-      <div class="p-6 overflow-y-auto">
-        <ul class="space-y-3 relative">
-          <!-- Custom List Items with numbers -->
-          <li
-            class="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/50 transition-colors border border-transparent hover:border-blue-100 group">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-              1</div>
-            <div>
-              <span class="font-semibold text-gray-800 block">Invoice</span>
-              <span class="text-xs text-gray-500">Dokumen tagihan asli</span>
-            </div>
-          </li>
-          <li
-            class="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/50 transition-colors border border-transparent hover:border-blue-100 group">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-              2</div>
-            <div>
-              <span class="font-semibold text-gray-800 block">Faktur Pajak</span>
-              <span class="text-xs text-gray-500">Dokumen pajak sah</span>
-            </div>
-          </li>
-          <li
-            class="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/50 transition-colors border border-transparent hover:border-blue-100 group">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-              3</div>
-            <div>
-              <span class="font-semibold text-gray-800 block">Rekap Reguler (Max 10 PO per Invoice)</span>
-              <span class="text-xs text-gray-500">Rincian pekerjaan/payroll</span>
-            </div>
-          </li>
-          <li
-            class="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/50 transition-colors border border-transparent hover:border-blue-100 group">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-              4</div>
-            <div>
-              <span class="font-semibold text-gray-800 block">BPJS Kesehatan & Ketenagakerjaan</span>
-              <span class="text-xs text-gray-500">Bukti bayar/pelaporan</span>
-            </div>
-          </li>
-          <li
-            class="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/50 transition-colors border border-transparent hover:border-blue-100 group">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-              5</div>
-            <div>
-              <span class="font-semibold text-gray-800 block">Copy Kontrak</span>
-              <span class="text-xs text-gray-500">Salinan surat perjanjian kerja</span>
-            </div>
-          </li>
-          <li
-            class="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/50 transition-colors border border-transparent hover:border-blue-100 group">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-              6</div>
-            <div>
-              <span class="font-semibold text-gray-800 block">Lampiran PO</span>
-              <span class="text-xs text-gray-500">Purchase Order terkait</span>
-            </div>
-          </li>
-          <li
-            class="flex items-start gap-4 p-3 rounded-xl hover:bg-blue-50/50 transition-colors border border-transparent hover:border-blue-100 group">
-            <div
-              class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-              7</div>
-            <div>
-              <span class="font-semibold text-gray-800 block">Absen Manual dari Distrik</span>
-              <span class="text-xs text-gray-500">Bukti kehadiran fisik/manual</span>
-            </div>
-          </li>
-        </ul>
-
-        <div class="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-xl flex items-start gap-3">
-          <i data-lucide="alert-circle" class="w-5 h-5 text-amber-500 shrink-0 mt-0.5"></i>
-          <p class="text-sm text-amber-800 font-medium">Pastikan semua dokumen disusun berurutan sesuai nomor
-            di atas sebelum dikirim.</p>
-        </div>
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="px-6 py-4 border-t border-gray-100 bg-gray-50 flex justify-end">
-        <button onclick="closeModal()"
-          class="px-6 py-2 bg-gray-800 text-white rounded-xl font-medium hover:bg-gray-900 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
-          Mengerti
-        </button>
-      </div>
+        <p id="loading-text" class="text-sm text-blue-600 font-bold hidden mt-2">Sedang memproses gambar, mohon tunggu...</p>
     </div>
-  </div>
 
-  <!-- Scripts -->
-  <script>
-    // Initialize Icons
-    lucide.createIcons();
+    <div class="relative bg-white w-full max-w-md shadow-2xl rounded-2xl overflow-hidden border border-gray-200" id="poster-container">
+        
+        <div class="bg-[#1e3a8a] text-white p-8 pt-12 text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mr-12 -mt-12 w-40 h-40 rounded-full bg-[#2563eb] opacity-20"></div>
+            <div class="absolute bottom-0 left-0 -ml-12 -mb-12 w-32 h-32 rounded-full bg-[#60a5fa] opacity-20"></div>
+            <div class="absolute top-1/2 left-4 w-4 h-4 bg-green-400 rounded-full"></div>
+            <div class="absolute top-8 right-6 w-2 h-2 bg-white rounded-full"></div>
 
-    // Set Current Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+            <div class="relative z-10">
+                <p class="text-sm font-semibold tracking-[0.2em] text-yellow-400 uppercase mb-2">PT Bukit Batu Internusa</p>
+                <h1 class="font-montserrat text-5xl font-black leading-tight text-white drop-shadow-md">
+                    WE ARE<br>
+                    <span class="text-yellow-400">HIRING!</span>
+                </h1>
+            </div>
+        </div>
 
-    // Modal Logic
-    const modalOverlay = document.getElementById('modalOverlay');
-    const modalContent = document.getElementById('modalContent');
-    const modalTitle = document.getElementById('modalTitle');
+        <div class="relative flex justify-center -mt-6 z-20">
+            <div class="bg-yellow-400 py-3 px-12 rounded-xl shadow-lg border-2 border-white">
+                <h2 class="font-montserrat text-2xl font-bold text-[#1e3a8a] uppercase tracking-wider">Admin</h2>
+            </div>
+        </div>
 
-    function openDocumentModal(stepName) {
-      // Update Title if needed based on the step clicked
-      modalTitle.textContent = "Urutan Berkas (" + stepName + ")";
+        <div class="p-8 pt-10 pb-4 relative">
+            <div class="absolute top-0 right-0 w-32 h-64 bg-pattern opacity-30"></div>
+            
+            <h3 class="text-xl font-bold text-[#1e3a8a] mb-6 flex items-center">
+                <i class="fa-solid fa-list-check mr-3 text-yellow-500"></i> Kualifikasi:
+            </h3>
+            
+            <ul class="space-y-4 text-gray-700 text-sm font-medium relative z-10">
+                <li class="flex items-start bg-gray-50 p-3 rounded-lg border-l-4 border-yellow-400 shadow-sm">
+                    <div class="bg-[#1e3a8a] text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 shadow-md mt-0.5">
+                        <i class="fa-solid fa-graduation-cap text-sm"></i>
+                    </div>
+                    <span class="pt-1">Min. SMA / SMK Sederajat</span>
+                </li>
 
-      // Show modal
-      modalOverlay.classList.remove('hidden');
+                <li class="flex items-start bg-gray-50 p-3 rounded-lg border-l-4 border-[#1e3a8a] shadow-sm">
+                    <div class="bg-yellow-400 text-[#1e3a8a] rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 shadow-md mt-0.5">
+                        <i class="fa-solid fa-desktop text-sm"></i>
+                    </div>
+                    <span class="pt-1">Familiar dengan pengoperasian komputer</span>
+                </li>
 
-      // Small delay to allow display:block to apply before animating opacity
-      setTimeout(() => {
-        modalOverlay.classList.remove('opacity-0');
-        modalOverlay.classList.add('opacity-100');
+                <li class="flex items-start bg-gray-50 p-3 rounded-lg border-l-4 border-yellow-400 shadow-sm">
+                    <div class="bg-[#1e3a8a] text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 shadow-md mt-0.5">
+                        <i class="fa-solid fa-file-excel text-sm"></i>
+                    </div>
+                    <span class="pt-1">Mampu dan menguasai Microsoft Excel (Vlookup). <br><span class="text-xs text-gray-500 italic mt-1 inline-block">*Xlookup / Power Query menjadi nilai tambah.</span></span>
+                </li>
 
-        modalContent.classList.remove('scale-95', 'opacity-0');
-        modalContent.classList.add('scale-100', 'opacity-100');
-      }, 10);
+                <li class="flex items-start bg-gray-50 p-3 rounded-lg border-l-4 border-[#1e3a8a] shadow-sm">
+                    <div class="bg-yellow-400 text-[#1e3a8a] rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 shadow-md mt-0.5">
+                        <i class="fa-solid fa-lightbulb text-sm"></i>
+                    </div>
+                    <span class="pt-1">Memiliki kreativitas serta penalaran yang baik terhadap masalah yang timbul</span>
+                </li>
 
-      // Prevent body scroll
-      document.body.style.overflow = 'hidden';
-    }
+                <li class="flex items-start bg-gray-50 p-3 rounded-lg border-l-4 border-yellow-400 shadow-sm">
+                    <div class="bg-[#1e3a8a] text-white rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 shadow-md mt-0.5">
+                        <i class="fa-solid fa-clock text-sm"></i>
+                    </div>
+                    <span class="pt-1">Manajemen Waktu yang baik dalam mengelola tugas</span>
+                </li>
 
-    function closeModal() {
-      // Start exit animation
-      modalOverlay.classList.remove('opacity-100');
-      modalOverlay.classList.add('opacity-0');
+                <li class="flex items-start bg-gray-50 p-3 rounded-lg border-l-4 border-[#1e3a8a] shadow-sm">
+                    <div class="bg-yellow-400 text-[#1e3a8a] rounded-full w-8 h-8 flex items-center justify-center shrink-0 mr-3 shadow-md mt-0.5">
+                        <i class="fa-solid fa-car text-sm"></i>
+                    </div>
+                    <span class="pt-1">Dapat mengendarai mobil pribadi</span>
+                </li>
+            </ul>
+        </div>
 
-      modalContent.classList.remove('scale-100', 'opacity-100');
-      modalContent.classList.add('scale-95', 'opacity-0');
+        <div class="px-8 pb-6 relative z-10">
+            <a href="https://cr4r.github.io/loker-bbi/flowchart" target="_blank" class="w-full inline-flex items-center justify-center space-x-2 bg-blue-50 hover:bg-blue-100 text-[#1e3a8a] py-3 px-4 rounded-xl font-bold border border-blue-200 shadow-inner transition duration-200 group">
+                <i class="fa-solid fa-diagram-project text-yellow-500 text-lg transition-transform group-hover:scale-110"></i>
+                <span class="text-sm">Lihat Flowchart Keseharian Kerja</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-400"></i>
+            </a>
+        </div>
 
-      // Wait for animation to finish before hiding
-      setTimeout(() => {
-        modalOverlay.classList.add('hidden');
-        document.body.style.overflow = '';
-      }, 300);
-    }
+        <div class="bg-[#1e3a8a] p-6 text-center relative border-t-4 border-green-400">
+            <p class="text-sm font-semibold text-white mb-4">Kirimkan CV dan Surat Lamaran Anda via WhatsApp ke:</p>
+            
+            <div class="inline-flex items-center justify-center space-x-3 bg-[#25D366] text-white py-3 px-8 rounded-full font-bold shadow-lg transform transition hover:scale-105 mb-4 border border-[#1da851]">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <span class="text-xl tracking-wide">0822-3741-6678</span>
+            </div>
+            
+            <div class="bg-white/10 rounded-lg p-3 mt-2 border border-white/20">
+                <p class="text-xs text-yellow-200 font-medium mb-1">Format Penamaan File:</p>
+                <p class="text-sm text-white font-mono bg-[#0f2150] py-1 px-3 rounded inline-block">Admin_Nama Anda</p>
+                <p class="text-[10px] text-gray-300 mt-2 italic">*Kirim dokumen dalam format PDF</p>
+            </div>
+        </div>
+    </div>
 
-    // Close on clicking outside the modal content
-    modalOverlay.addEventListener('click', function (e) {
-      if (e.target === modalOverlay) {
-        closeModal();
-      }
-    });
+    <script>
+        function downloadPoster() {
+            const poster = document.getElementById('poster-container');
+            const loadingText = document.getElementById('loading-text');
+            
+            loadingText.classList.remove('hidden');
+            
+            html2canvas(poster, {
+                scale: 2.5, 
+                useCORS: true,
+                backgroundColor: '#ffffff',
+                logging: false
+            }).then(canvas => {
+                loadingText.classList.add('hidden');
+                
+                // Menggunakan Blob untuk menghindari error gagal download di browser
+                canvas.toBlob(function(blob) {
+                    if (!blob) {
+                        alert("Gagal memproses gambar. Silakan lakukan Screenshot pada layar.");
+                        return;
+                    }
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.download = 'Poster_Lowongan_Admin_PT_BBI.png';
+                    link.href = url;
+                    
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Membersihkan objek URL dari memori
+                    setTimeout(() => URL.revokeObjectURL(url), 100);
+                }, 'image/png');
 
-    // Close on Escape key
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !modalOverlay.classList.contains('hidden')) {
-        closeModal();
-      }
-    });
-  </script>
+            }).catch(err => {
+                console.error(err);
+                alert("Terjadi kendala teknis. Silakan lakukan Screenshot area poster ini.");
+                loadingText.classList.add('hidden');
+            });
+        }
+    </script>
 </body>
-
 </html>
